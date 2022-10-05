@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+padding: 0;
+margin: 0;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-bottom: 4rem;
+}
+
+.flag img{
+    width: 100%;
+    height: auto;
+}
+
+.infList, .playerList{
+    padding-right: 2.5rem;
+    list-style: none;
+    text-align: justify;
+}
+
+.infList li, .playerList li {
+    margin-bottom: .5rem;
+}
+
+.line{
+    margin: 4rem auto;
+    width: 80%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.437);
+    
+}
