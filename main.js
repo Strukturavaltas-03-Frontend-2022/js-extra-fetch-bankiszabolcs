@@ -1,10 +1,18 @@
 const url1 = 'https://raw.githubusercontent.com/jokecamp/FootballData/master/UEFA_European_Championship/Euro%202016/players_json/teams.json'
 const url2 = 'https://raw.githubusercontent.com/jokecamp/FootballData/master/UEFA_European_Championship/Euro%202016/players_json/hungary-players.json'
 
-const promise1 = fetch(url1).then(data=>data.json())
-const promise2 = fetch(url2).then(data=>data.json())
+const getData = async()=>{
+try {
+    const promise1 = fetch(url1).then(data=>data.json())
+    const promise2 = fetch(url2).then(data=>data.json())
+    const result = await Promise.all([promise1, promise2]).then(data=>data)
+    return result
+} catch (error) {
+    console.error(error);
+}
+}
 
-const result = await Promise.all([promise1, promise2]).then(data=>data)
+const result = await getData()
 
 const [countries, teams] = result
 
